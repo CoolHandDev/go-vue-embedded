@@ -48,6 +48,12 @@ Vue is built using `npm run build`. The resulting `/dist` directory is copied to
 
 ## Go
 
+[esc](https://github.com/mjibson/esc) is used to embed the resources into the Go binary. Go get it before starting.
+
+```
+go get github.com/mjibson/esc
+```
+
 -   copy the \*.go files and relevant go subdirectories to the `/build-workspace/dist` created from the Vue build process. The objective is to make sure the main entrypoint to the Go program is in the same directory as the entry point (index.html) of the Vue application.
 -   run `go generate` to generate the `frontend-assets.go` source that will contain the Vue application assets that will be embedded into the binary. Specifics of the embedding and code generation are in the main.go file. For example, a `//go:generate esc -o frontend-assets.go -pkg main index.html favicon.ico js css img` appears on the top of main.go.
 -   run `go build -o go-vue-embedded frontend-assets.go main.go` to create the binary
