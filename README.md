@@ -33,9 +33,18 @@ BAMAAA==
 
 `index.html` is in the same directory as main.go. Assets are in `/css`, `/img`, and `/js` respectively.
 
+## Build Workspace
+
+Create a `build-workspace` directory.
+
 ## Vue
 
 Vue is built using `npm run build`. The resulting `/dist` directory is copied to the `/build-workspace` directory.
+
+```
+/build-workspace
+    /dist
+```
 
 ## Go
 
