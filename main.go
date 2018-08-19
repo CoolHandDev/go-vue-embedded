@@ -6,15 +6,15 @@ import (
 	"net/http"
 )
 
-//go:generate esc -o frontend-assets.go -pkg main ./front-end/dist
+//go:generate esc -o frontend-assets.go -pkg main index.html favicon.ico js css img
 
 func main() {
 	mux := http.NewServeMux()
 	fs := http.FileServer(FS(false))
-	mux.Handle("/front-end/", fs)
-	mux.Handle("/css/", http.StripPrefix("/css/", fs))
+	mux.Handle("/", fs)
+	//mux.Handle("/css/", http.StripPrefix("/css/", fs))
 	//mux.Handle("/js/", http.StripPrefix("/js/", fs))
-	mux.Handle("/img/", http.StripPrefix("/img/", fs))
+	//mux.Handle("/img/", http.StripPrefix("/img/", fs))
 	srv := &http.Server{
 		Addr:    "127.0.0.1:4022",
 		Handler: mux,
