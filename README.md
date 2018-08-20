@@ -62,6 +62,6 @@ go get github.com/mjibson/esc
 
 Run the `go-vue-embedded` binary. Open up the browser to http://127.0.0.1:4022/#/. The `#` is due to Vue router's default [mode](https://router.vuejs.org/guide/essentials/history-mode.html).
 
-## Todo
+# Conclusion
 
--   create a makefile for the entire build process
+This experiment suggests that maybe interleaving Go source into the Vue project simplifies the build process. We will not have to create a build workspace and copy files to it to perform the build. An outsider will find the project hard to understand.
