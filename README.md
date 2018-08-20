@@ -10,7 +10,9 @@ Development is done in the /front-end directory
 
 Development is done in the root directory
 
-# Build Process (WIP)
+# Build Process
+
+**Update**: a Makefile has been added so just run `make` to build the project and produce a binary.
 
 The following steps are necessary to make the Vue build work as an embedded resource inside the Go binary. We have to make it so that the paths that will be in the frontend-assets.go are located off the same directory as the Go source. For example
 
