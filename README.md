@@ -66,4 +66,4 @@ Run the `go-vue-embedded` binary. Open up the browser to http://127.0.0.1:4022/#
 
 # Conclusion
 
-This experiment suggests that maybe interleaving Go source into the Vue project simplifies the build process. We will not have to create a build workspace and copy files to it to perform the build. An outsider will find the project hard to understand.
+Esc, when it generates the Go code, uses the structure of the directory that was passed to it. For example, if we just pass the /dist to generate the Go code. All the resources will prefixed with the /dist path. The built Vue code does not like this as it treats webpacked resources as relative path resources. It doesn't know about the /dist path. So, we have to copy the Go code to the build-workspace so that the generated Go code has just the "/" in the resource paths. Maybe there is another resource embedder or an option in Esc to strip the /dist.
