@@ -70,10 +70,6 @@ Esc, when it generates the Go code, uses the structure of the directory that was
 
 ## Update
 
-[Packr](https://github.com/gobuffalo/packr) fixes the problem described above because:
-
-```
-Packr takes file resolution a step further. When declaring a new box you use a relative path, ./templates. When Packr recieves this call it calculates out the absolute path to that directory. By doing this it means you can be guaranteed that Packr can find your files correctly, even if you're not running in the directory that the box was created in. This helps with the problem of testing, where Go changes the pwd for each package, making relative paths difficult to work with. This is not a problem when using Packr.
-```
+[Packr fixes the problem](https://github.com/gobuffalo/packr#development-made-easy) described above.
 
 All we have to do is change a couple of lines of code and we can avoid the hacky build process.
