@@ -3,3 +3,4 @@ dist
 front-end/dist
 build-workspace
 go-vue-embedded
+a_main-packr.go
