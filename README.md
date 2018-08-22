@@ -67,3 +67,13 @@ Run the `go-vue-embedded` binary. Open up the browser to http://127.0.0.1:4022/#
 # Conclusion
 
 Esc, when it generates the Go code, uses the structure of the directory that was passed to it. For example, if we just pass the /dist to generate the Go code. All the resources will prefixed with the /dist path. The built Vue code does not like this as it treats webpacked resources as relative path resources. It doesn't know about the /dist path. So, we have to copy the Go code to the build-workspace so that the generated Go code has just the "/" in the resource paths. Maybe there is another resource embedder or an option in Esc to strip the /dist.
+
+## Update
+
+[Packr](https://github.com/gobuffalo/packr) fixes the problem described above because:
+
+```
+Packr takes file resolution a step further. When declaring a new box you use a relative path, ./templates. When Packr recieves this call it calculates out the absolute path to that directory. By doing this it means you can be guaranteed that Packr can find your files correctly, even if you're not running in the directory that the box was created in. This helps with the problem of testing, where Go changes the pwd for each package, making relative paths difficult to work with. This is not a problem when using Packr.
+```
+
+All we have to do is change a couple of lines of code and we can avoid the hacky build process.
