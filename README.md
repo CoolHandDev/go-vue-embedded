@@ -28,4 +28,4 @@ Run the `go-vue-embedded` binary. Open up the browser to http://127.0.0.1:4022/#
 
 # Conclusion
 
-Embedding a Vue application in Go is possible and straightforward thanks to [Packr](https://github.com/gobuffalo/packr).
+Embedding a Vue application in Go is possible and straightforward thanks to [Pkger](https://github.com/markbates/pkger).

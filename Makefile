@@ -6,5 +6,5 @@ build-vue-app:
 
 .PHONY: build-go
 build-go:
-	packr
-	go build -o go-vue-embedded main.go a_main-packr.go
+	pkger
+	go build -o go-vue-embedded .

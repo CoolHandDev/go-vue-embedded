@@ -5,13 +5,12 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/gobuffalo/packr"
+	"github.com/markbates/pkger"
 )
 
 func main() {
-	box := packr.NewBox("./front-end/dist")
 	mux := http.NewServeMux()
-	fs := http.FileServer(box)
+	fs := http.FileServer(pkger.Dir("/front-end/dist/"))
 	mux.Handle("/", fs)
 
 	srv := &http.Server{
